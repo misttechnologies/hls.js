@@ -449,7 +449,7 @@ class AudioStreamController extends EventHandler {
         logger.log(`Demuxing ${sn} of [${details.startSN} ,${details.endSN}],track ${trackId}`);
         // time Offset is accurate if level PTS is known, or if playlist is not sliding (not live)
         let accurateTimeOffset = details.PTSKnown || !details.live;
-        this.demuxer.push(data.payload, audioCodec, null, start, fragCurrent.cc, trackId, sn, duration, fragCurrent.decryptdata,accurateTimeOffset);
+        this.demuxer.append(data.payload, audioCodec, null, start, fragCurrent.cc, trackId, sn, duration, fragCurrent.decryptdata,accurateTimeOffset);
     }
     this.fragLoadError = 0;
   }

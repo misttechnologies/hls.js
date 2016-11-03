@@ -25,7 +25,7 @@ class DemuxerInline {
     }
   }
 
-  push(data, audioCodec, videoCodec, timeOffset, cc, level, sn, duration,accurateTimeOffset) {
+  append(data, audioCodec, videoCodec, timeOffset, cc, level, sn, duration,accurateTimeOffset) {
     var demuxer = this.demuxer;
     if (!demuxer) {
       let hls = this.hls,
@@ -45,7 +45,14 @@ class DemuxerInline {
       }
       this.demuxer = demuxer;
     }
-    demuxer.push(data,audioCodec,videoCodec,timeOffset,cc,level,sn,duration,accurateTimeOffset);
+    demuxer.append(data,audioCodec,videoCodec,timeOffset,cc,level,sn,duration,accurateTimeOffset);
+  }
+
+  notifycomplete() {
+    var demuxer = this.demuxer;
+    if(demuxer) {
+      demuxer.notifycomplete();
+    }
   }
 }
 
