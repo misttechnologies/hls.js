@@ -49,7 +49,7 @@ module.exports = {
   AUDIO_TRACK_LOADED: 'hlsAudioTrackLoaded',
   // fired when a fragment loading starts - data: { frag : fragment object}
   FRAG_LOADING: 'hlsFragLoading',
-  // fired when a fragment loading is progressing - data: { frag : fragment object, { trequest, tfirst, loaded}}
+  // fired when a fragment loading is progressing - data: { frag : fragment object, stats : { trequest, tfirst, loaded}, data : {string/arraybuffer}}
   FRAG_LOAD_PROGRESS: 'hlsFragLoadProgress',
   // Identifier for fragment load aborting for emergency switch down - data: {frag : fragment object}
   FRAG_LOAD_EMERGENCY_ABORTED: 'hlsFragLoadEmergencyAborted',
