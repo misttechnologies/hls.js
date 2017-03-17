@@ -353,7 +353,8 @@ class BufferController extends EventHandler {
     if (details.fragments.length === 0) {
       return;
     }
-    this._levelDuration = details.totalduration + details.fragments[0].start;
+    this._levelDuration = details.live ?
+        Infinity : details.totalduration + details.fragments[0].start;
     this.updateMediaElementDuration();
   }
 
